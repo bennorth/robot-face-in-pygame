@@ -14,6 +14,9 @@ pupil_sz = 20
 pupil_dx = 0
 pupil_dy = 0
 
+mouth_half_wd = 300
+mouth_half_ht = 20
+
 while True:
     # Limit frame speed to 30 FPS
     #
@@ -59,5 +62,8 @@ while True:
     pygame.draw.rect(screen, pygame.Color('black'), (50 + pupil_x, 50 + pupil_y, pupil_sz, pupil_sz))
     pygame.draw.rect(screen, pygame.Color('red'), (700, 50, 50, 50))
     pygame.draw.rect(screen, pygame.Color('black'), (700 + pupil_x, 50 + pupil_y, pupil_sz, pupil_sz))
+
+    pygame.draw.rect(screen, pygame.Color('red'), (400 - mouth_half_wd, 600 - mouth_half_ht,
+                                                   2 * mouth_half_wd, 2 * mouth_half_ht))
 
     pygame.display.flip()
