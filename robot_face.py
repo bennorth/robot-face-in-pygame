@@ -11,6 +11,8 @@ pupil_x = 10
 pupil_y = 10
 pupil_sz = 20
 
+pupil_dx = 0
+
 while True:
     # Limit frame speed to 30 FPS
     #
@@ -21,11 +23,17 @@ while True:
             finished = True
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_a:
-                pupil_x -= 5
-                if pupil_x < 5: pupil_x = 5
+                pupil_dx -= 2
             elif event.key == pygame.K_d:
-                pupil_x += 5
-                if pupil_x > 25: pupil_x = 25
+                pupil_dx += 2
+        elif event.type == pygame.KEYUP:
+            if event.key == pygame.K_a:
+                pupil_dx += 2
+            elif event.key == pygame.K_d:
+                pupil_dx -= 2
+
+    pupil_x += pupil_dx
+    pupil_x = min(25, max(5, pupil_x))
 
     sys.stdout.write('%d %d\r' % (pupil_x, pupil_y))
     sys.stdout.flush()
