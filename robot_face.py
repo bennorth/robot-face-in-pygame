@@ -1,3 +1,4 @@
+import sys
 import pygame
 
 pygame.init()
@@ -18,6 +19,16 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             finished = True
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_a:
+                pupil_x -= 5
+                if pupil_x < 5: pupil_x = 5
+            elif event.key == pygame.K_d:
+                pupil_x += 5
+                if pupil_x > 25: pupil_x = 25
+
+    sys.stdout.write('%d %d\r' % (pupil_x, pupil_y))
+    sys.stdout.flush()
 
     if finished:
         break
