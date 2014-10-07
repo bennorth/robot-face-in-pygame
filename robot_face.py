@@ -17,6 +17,9 @@ pupil_dy = 0
 mouth_half_wd = 300
 mouth_half_ht = 20
 
+mouth_d_half_wd = 0
+mouth_d_half_ht = 0
+
 while True:
     # Limit frame speed to 30 FPS
     #
@@ -34,6 +37,14 @@ while True:
                 pupil_dy -= 2
             elif event.key == pygame.K_s:
                 pupil_dy += 2
+            elif event.key == pygame.K_UP:
+                mouth_d_half_ht += 5
+            elif event.key == pygame.K_DOWN:
+                mouth_d_half_ht -= 5
+            elif event.key == pygame.K_LEFT:
+                mouth_d_half_wd -= 5
+            elif event.key == pygame.K_RIGHT:
+                mouth_d_half_wd += 5
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_a:
                 pupil_dx += 2
@@ -43,13 +54,27 @@ while True:
                 pupil_dy += 2
             elif event.key == pygame.K_s:
                 pupil_dy -= 2
+            elif event.key == pygame.K_UP:
+                mouth_d_half_ht -= 5
+            elif event.key == pygame.K_DOWN:
+                mouth_d_half_ht += 5
+            elif event.key == pygame.K_LEFT:
+                mouth_d_half_wd += 5
+            elif event.key == pygame.K_RIGHT:
+                mouth_d_half_wd -= 5
 
     pupil_x += pupil_dx
     pupil_x = min(25, max(5, pupil_x))
     pupil_y += pupil_dy
     pupil_y = min(25, max(5, pupil_y))
 
-    sys.stdout.write('%d %d\r' % (pupil_x, pupil_y))
+    mouth_half_wd += mouth_d_half_wd
+    mouth_half_wd = min(300, max(mouth_half_wd, 100))
+
+    mouth_half_ht += mouth_d_half_ht
+    mouth_half_ht = min(100, max(mouth_half_ht, 10))
+
+    sys.stdout.write('%d %d     %d %d   \r' % (pupil_x, pupil_y, mouth_half_wd, mouth_half_ht))
     sys.stdout.flush()
 
     if finished:
