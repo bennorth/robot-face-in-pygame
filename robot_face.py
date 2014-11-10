@@ -70,5 +70,6 @@ while True:
     pygame.draw.rect(screen, pygame.Color('brown'), (700 + eyes, 50 + eyes_up, pupil_sz, pupil_sz))
     pygame.draw.rect(screen, pygame.Color('brown'), (50 + eyes, 50 + eyes_up, pupil_sz, pupil_sz))
     pygame.draw.rect(screen, pygame.Color('pink'), (50, 600, 700, 100))
+    pygame.draw.rect(screen, pygame.Color(120, 120, 120), (350, 350, 100, 100))
 
     pygame.display.flip()
