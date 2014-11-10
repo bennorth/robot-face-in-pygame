@@ -33,7 +33,6 @@ while True:
             elif event.key == pygame.K_d:
                 key_d_down = False
 
-
     if key_a_down:
         eyes -= 3
         if eyes < 5: eyes = 5
