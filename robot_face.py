@@ -9,7 +9,7 @@ finished = False
 
 eyes = 10
 eyes_up = 10
-pupil_sz = 20
+pupil_sz = 10
 
 key_a_down = False
 key_d_down = False
@@ -35,11 +35,11 @@ while True:
 
     if key_a_down:
         eyes -= 3
-        if eyes < 5: eyes = 5
+        if eyes < 0: eyes = 0
 
     if key_d_down:
         eyes += 3
-        if eyes > 25: eyes = 25
+        if eyes > 40: eyes = 40
 
     if finished:
         break
