@@ -41,9 +41,6 @@ while True:
         eyes += 3
         if eyes > 25: eyes = 25
 
-    sys.stdout.write('%d %d\r' % (eyes, eyes_up))
-    sys.stdout.flush()
-
     if finished:
         break
 
