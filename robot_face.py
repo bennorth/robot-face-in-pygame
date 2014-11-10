@@ -7,7 +7,7 @@ screen = pygame.display.set_mode((800, 800))
 clock = pygame.time.Clock()
 finished = False
 
-pupil_x = 10
+eyes = 10
 pupil_y = 10
 pupil_sz = 20
 
@@ -35,14 +35,14 @@ while True:
 
 
     if key_a_down:
-        pupil_x -= 3
-        if pupil_x < 5: pupil_x = 5
+        eyes -= 3
+        if eyes < 5: eyes = 5
 
     if key_d_down:
-        pupil_x += 3
-        if pupil_x > 25: pupil_x = 25
+        eyes += 3
+        if eyes > 25: eyes = 25
 
-    sys.stdout.write('%d %d\r' % (pupil_x, pupil_y))
+    sys.stdout.write('%d %d\r' % (eyes, pupil_y))
     sys.stdout.flush()
 
     if finished:
@@ -52,8 +52,8 @@ while True:
     screen.fill(pygame.Color(0, 0, 0, 255))
 
     pygame.draw.rect(screen, pygame.Color('red'), (50, 50, 50, 50))
-    pygame.draw.rect(screen, pygame.Color('black'), (50 + pupil_x, 50 + pupil_y, pupil_sz, pupil_sz))
+    pygame.draw.rect(screen, pygame.Color('black'), (50 + eyes, 50 + pupil_y, pupil_sz, pupil_sz))
     pygame.draw.rect(screen, pygame.Color('red'), (700, 50, 50, 50))
-    pygame.draw.rect(screen, pygame.Color('black'), (700 + pupil_x, 50 + pupil_y, pupil_sz, pupil_sz))
+    pygame.draw.rect(screen, pygame.Color('black'), (700 + eyes, 50 + pupil_y, pupil_sz, pupil_sz))
 
     pygame.display.flip()
