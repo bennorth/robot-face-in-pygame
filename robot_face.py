@@ -13,6 +13,8 @@ pupil_sz = 10
 
 key_a_down = False
 key_d_down = False
+key_w_down = False
+key_s_down = False
 
 while True:
     # Limit frame speed to 30 FPS
@@ -27,11 +29,19 @@ while True:
                 key_a_down = True
             elif event.key == pygame.K_d:
                 key_d_down = True
+            elif event.key == pygame.K_w:
+                key_w_down = True
+            elif event.key == pygame.K_s:
+                key_s_down = True
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_a:
                 key_a_down = False
             elif event.key == pygame.K_d:
                 key_d_down = False
+            elif event.key == pygame.K_w:
+                key_w_down = False
+            elif event.key == pygame.K_s:
+                key_s_down = False
 
     if key_a_down:
         eyes -= 3
@@ -40,6 +50,14 @@ while True:
     if key_d_down:
         eyes += 3
         if eyes > 40: eyes = 40
+
+    if key_s_down:
+        eyes_up += 3
+        if eyes_up > 40: eyes_up = 40
+
+    if key_w_down:
+        eyes_up -= 3
+        if eyes_up < 0: eyes_up = 0
 
     if finished:
         break
