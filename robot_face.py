@@ -98,26 +98,6 @@ while True:
         if tear_Y > 480:
             tear_fall = False
 
-    if key_SPACE_down:
-        mouth_hight -=10
-    if mouth_hight < 5: mouth_hight = 5
-
-    if key_LEFT_down:
-        mouth_wide +=10
-    if mouth_wide > 700: mouth_wide = 700
-
-    if key_RIGHT_down:
-        mouth_wide -=10
-    if mouth_wide < 45: mouth_wide = 45
-
-    total_space = 800 - mouth_wide
-    mouth_space = total_space / 2
-
-    if tear_fall:
-        tear_Y += 5
-        if tear_Y > 480:
-            tear_fall = False
-
     screen.fill(pygame.Color('grey'))
     pygame.draw.rect(screen, pygame.Color('white'), (50, 50, 50, 50))
     pygame.draw.rect(screen, pygame.Color('white'), (700, 50, 50, 50))
