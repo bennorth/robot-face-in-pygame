@@ -17,6 +17,15 @@ myfont = pygame.font.SysFont("monospace", 15)
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode((800, 800))
 
+speech_from_key = {pygame.K_t: 'WAA(cry)',
+                   pygame.K_h: 'hello',
+                   pygame.K_z: 'My',
+                   pygame.K_x: 'name',
+                   pygame.K_c: 'is',
+                   pygame.K_v: 'John',
+                   pygame.K_b: 'Paul',
+                   pygame.K_n: 'Sparki'}
+
 while not finished:
     clock.tick(30)
     for event in pygame.event.get():
