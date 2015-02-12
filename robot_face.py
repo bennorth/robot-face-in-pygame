@@ -1,9 +1,5 @@
 
 import pygame
-key_UP_down = False
-key_DOWN_down = False
-key_RIGHT_down = False
-key_LEFT_down = False
 key_SPACE_down = False
 tear_fall = False
 tear_Y = 0
@@ -26,14 +22,6 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:finshed = True
         elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP:
-                key_UP_down = True
-            if event.key == pygame.K_DOWN:
-                key_DOWN_down = True
-            if event.key == pygame.K_RIGHT:
-                key_RIGHT_down = True
-            if event.key == pygame.K_LEFT:
-                key_LEFT_down = True
             if event.key == pygame.K_SPACE:
                 key_SPACE_down = True
             if event.key == pygame.K_t:
@@ -63,14 +51,6 @@ while True:
 
 
         elif event.type == pygame.KEYUP:
-            if event.key == pygame.K_UP:
-                key_UP_down = False
-            if event.key == pygame.K_DOWN:
-                key_DOWN_down = False
-            if event.key == pygame.K_RIGHT:
-                key_RIGHT_down = False
-            if event.key == pygame.K_LEFT:
-                key_LEFT_down = False
             if event.key == pygame.K_SPACE:
                 key_SPACE_down = False
             if event.key in [pygame.K_h, pygame.K_z, pygame.K_x, pygame.K_c, pygame.K_v, pygame.K_b, pygame.K_n, pygame.K_t]:
@@ -94,19 +74,19 @@ while True:
         eyes_up -=3
     if eyes_up < 0: eyes_up = 0
 
-    if key_DOWN_down:
+    if keys[pygame.K_DOWN]:
         mouth_hight +=10
     if mouth_hight > 120: mouth_hight = 120
 
-    if key_UP_down:
+    if keys[pygame.K_UP]:
         mouth_hight -=10
     if mouth_hight < 5: mouth_hight = 5
 
-    if key_LEFT_down:
+    if keys[pygame.K_LEFT]:
         mouth_wide +=10
     if mouth_wide > 700: mouth_wide = 700
 
-    if key_RIGHT_down:
+    if keys[pygame.K_RIGHT]:
         mouth_wide -=10
     if mouth_wide < 45: mouth_wide = 45
 
