@@ -85,9 +85,6 @@ while True:
         mouth_wide -=10
     if mouth_wide < 45: mouth_wide = 45
 
-    total_space = 800 - mouth_wide
-    mouth_space = total_space / 2
-
     if tear_fall:
         tear_Y += 5
         if tear_Y > 480:
@@ -99,6 +96,9 @@ while True:
     pygame.draw.rect(screen, pygame.Color('white'), (700, 50, 50, 50))
     pygame.draw.rect(screen, pygame.Color('brown'), (700 + eyes, 50 + eyes_up, 10, 10))
     pygame.draw.rect(screen, pygame.Color('brown'), (50 + eyes, 50 + eyes_up, 10, 10))
+
+    total_space = 800 - mouth_wide
+    mouth_space = total_space / 2
 
     pygame.draw.rect(screen, pygame.Color('pink'), (mouth_space, 450,
                                                     mouth_wide, 100 + mouth_height))
