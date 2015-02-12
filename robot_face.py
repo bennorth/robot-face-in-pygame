@@ -20,7 +20,9 @@ screen = pygame.display.set_mode((800, 800))
 while not finished:
     clock.tick(30)
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:finished = True
+        if event.type == pygame.QUIT:
+            finished = True
+        #
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_t:
                 speak = 'WAA(cry)'
@@ -46,7 +48,7 @@ while not finished:
             if event.key == pygame.K_RETURN:
                 disabled = False
                 pass
-
+        #
         elif event.type == pygame.KEYUP:
             if event.key in [pygame.K_h, pygame.K_z, pygame.K_x, pygame.K_c, pygame.K_v, pygame.K_b, pygame.K_n, pygame.K_t]:
                 speak = ''
