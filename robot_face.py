@@ -96,19 +96,21 @@ while True:
             if event.key in [pygame.K_h, pygame.K_z, pygame.K_x, pygame.K_c, pygame.K_v, pygame.K_b, pygame.K_n, pygame.K_t]:
                 speak = ''
 
-    if key_a_down:
+    keys = pygame.key.get_pressed()
+
+    if keys[pygame.K_a]:
         eyes -=3
     if eyes < 0: eyes = 0
 
-    if key_d_down:
+    if keys[pygame.K_d]:
         eyes +=3
     if eyes > 40: eyes = 40
 
-    if key_s_down:
+    if keys[pygame.K_s]:
         eyes_up +=3
     if eyes_up >40: eyes_up = 40
 
-    if key_w_down:
+    if keys[pygame.K_w]:
         eyes_up -=3
     if eyes_up < 0: eyes_up = 0
 
