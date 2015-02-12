@@ -17,10 +17,10 @@ myfont = pygame.font.SysFont("monospace", 15)
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode((800, 800))
 
-while True:
+while not finished:
     clock.tick(30)
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:finshed = True
+        if event.type == pygame.QUIT:finished = True
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_t:
                 speak = 'WAA(cry)'
