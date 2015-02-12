@@ -25,33 +25,14 @@ while not finished:
         #
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_t:
-                speak = 'WAA(cry)'
                 if not tear_fall:
                     tear_fall = True
                     tear_Y = 100
-            if event.key == pygame.K_h:
-                speak = 'hello'
-            if event.key == pygame.K_z:
-                speak = 'My'
-            if event.key == pygame.K_x:
-                speak = 'name'
-            if event.key == pygame.K_c:
-                speak = 'is'
-            if event.key == pygame.K_v:
-                speak = 'John'
-            if event.key == pygame.K_b:
-                speak = 'Paul'
-            if event.key == pygame.K_n:
-                speak = 'Sparki'
             if event.key == pygame.K_y:
                 disabled = True
             if event.key == pygame.K_RETURN:
                 disabled = False
                 pass
-        #
-        elif event.type == pygame.KEYUP:
-            if event.key in [pygame.K_h, pygame.K_z, pygame.K_x, pygame.K_c, pygame.K_v, pygame.K_b, pygame.K_n, pygame.K_t]:
-                speak = ''
 
     keys = pygame.key.get_pressed()
 
@@ -86,6 +67,25 @@ while not finished:
     if keys[pygame.K_RIGHT]:
         mouth_wide -=10
     if mouth_wide < 45: mouth_wide = 45
+
+    if keys[pygame.K_t]:
+        speak = 'WAA(cry)'
+    elif keys[pygame.K_h]:
+        speak = 'hello'
+    elif keys[pygame.K_z]:
+        speak = 'My'
+    elif keys[pygame.K_x]:
+        speak = 'name'
+    elif keys[pygame.K_c]:
+        speak = 'is'
+    elif keys[pygame.K_v]:
+        speak = 'John'
+    elif keys[pygame.K_b]:
+        speak = 'Paul'
+    elif keys[pygame.K_n]:
+        speak = 'Sparki'
+    else:
+        speak = ''
 
     if tear_fall:
         tear_Y += 5
