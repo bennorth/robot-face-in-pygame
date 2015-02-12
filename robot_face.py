@@ -1,6 +1,5 @@
 
 import pygame
-key_SPACE_down = False
 tear_fall = False
 tear_Y = 0
 mouth_wide = 700
@@ -22,8 +21,6 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:finshed = True
         elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE:
-                key_SPACE_down = True
             if event.key == pygame.K_t:
                 speak = 'WAA(cry)'
                 if not tear_fall:
@@ -51,8 +48,6 @@ while True:
 
 
         elif event.type == pygame.KEYUP:
-            if event.key == pygame.K_SPACE:
-                key_SPACE_down = False
             if event.key in [pygame.K_h, pygame.K_z, pygame.K_x, pygame.K_c, pygame.K_v, pygame.K_b, pygame.K_n, pygame.K_t]:
                 speak = ''
 
@@ -104,7 +99,7 @@ while True:
     pygame.draw.rect(screen, pygame.Color('brown'), (700 + eyes,50 + eyes_up, 10, 10))
     pygame.draw.rect(screen, pygame.Color('brown'), (50 + eyes, 50 + eyes_up, 10,10))
     pygame.draw.rect(screen, pygame.Color('pink'), (mouth_space, 450, mouth_wide, 100 + mouth_height))
-    if key_SPACE_down:
+    if keys[pygame.K_SPACE]:
         pygame.draw.circle(screen, pygame.Color('green'), (380,400),20)
     pygame.draw.rect(screen, pygame.Color(120,120,120),(350,300,100,100 ))
     if tear_fall:
