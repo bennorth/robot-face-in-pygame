@@ -16,6 +16,7 @@ myfont = pygame.font.SysFont("monospace", 15)
 
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode((800, 800))
+
 while True:
     clock.tick(30)
     for event in pygame.event.get():
@@ -45,7 +46,6 @@ while True:
             if event.key == pygame.K_RETURN:
                 disabled = False
                 pass
-
 
         elif event.type == pygame.KEYUP:
             if event.key in [pygame.K_h, pygame.K_z, pygame.K_x, pygame.K_c, pygame.K_v, pygame.K_b, pygame.K_n, pygame.K_t]:
@@ -94,19 +94,24 @@ while True:
             tear_fall = False
 
     screen.fill(pygame.Color('grey'))
+
     pygame.draw.rect(screen, pygame.Color('white'), (50, 50, 50, 50))
     pygame.draw.rect(screen, pygame.Color('white'), (700, 50, 50, 50))
-    pygame.draw.rect(screen, pygame.Color('brown'), (700 + eyes,50 + eyes_up, 10, 10))
-    pygame.draw.rect(screen, pygame.Color('brown'), (50 + eyes, 50 + eyes_up, 10,10))
-    pygame.draw.rect(screen, pygame.Color('pink'), (mouth_space, 450, mouth_wide, 100 + mouth_height))
-    if keys[pygame.K_SPACE]:
-        pygame.draw.circle(screen, pygame.Color('green'), (380,400),20)
-    pygame.draw.rect(screen, pygame.Color(120,120,120),(350,300,100,100 ))
-    if tear_fall:
-        pygame.draw.circle(screen, pygame.Color(120,120,255), (100, tear_Y), 15)
-        pygame.draw.circle(screen, pygame.Color(120,120,255), (700, tear_Y), 15)
+    pygame.draw.rect(screen, pygame.Color('brown'), (700 + eyes, 50 + eyes_up, 10, 10))
+    pygame.draw.rect(screen, pygame.Color('brown'), (50 + eyes, 50 + eyes_up, 10, 10))
 
-    speech = myfont.render(speak, 1, (255,0,0))
+    pygame.draw.rect(screen, pygame.Color('pink'), (mouth_space, 450,
+                                                    mouth_wide, 100 + mouth_height))
+    if keys[pygame.K_SPACE]:
+        pygame.draw.circle(screen, pygame.Color('green'), (380, 400), 20)
+
+    pygame.draw.rect(screen, pygame.Color(120, 120, 120), (350, 300, 100, 100))
+
+    if tear_fall:
+        pygame.draw.circle(screen, pygame.Color(120, 120, 255), (100, tear_Y), 15)
+        pygame.draw.circle(screen, pygame.Color(120, 120, 255), (700, tear_Y), 15)
+
+    speech = myfont.render(speak, 1, (255, 0, 0))
     screen.blit(speech, (377, 535))
 
     pygame.display.flip()
