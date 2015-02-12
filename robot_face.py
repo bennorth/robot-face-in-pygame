@@ -72,8 +72,8 @@ while True:
             if event.key == pygame.K_RETURN:
                 disabled = False
                 pass
-            
-                
+
+
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_a:
                 key_a_down = False
@@ -95,10 +95,11 @@ while True:
                 key_SPACE_down = False
             if event.key in [pygame.K_h, pygame.K_z, pygame.K_x, pygame.K_c, pygame.K_v, pygame.K_b, pygame.K_n, pygame.K_t]:
                 speak = ''
-                
+
     if key_a_down:
         eyes -=3
     if eyes < 0: eyes = 0
+
     if key_d_down:
         eyes +=3
     if eyes > 40: eyes = 40
@@ -106,7 +107,6 @@ while True:
     if key_s_down:
         eyes_up +=3
     if eyes_up >40: eyes_up = 40
-    
 
     if key_w_down:
         eyes_up -=3
@@ -137,7 +137,6 @@ while True:
             tear_fall = False
 
     if key_SPACE_down:
-
         mouth_hight -=10
     if mouth_hight < 5: mouth_hight = 5
 
@@ -157,7 +156,7 @@ while True:
         if tear_Y > 480:
             tear_fall = False
 
-    screen.fill(pygame.Color('grey'))            
+    screen.fill(pygame.Color('grey'))
     pygame.draw.rect(screen, pygame.Color('white'), (50, 50, 50, 50))
     pygame.draw.rect(screen, pygame.Color('white'), (700, 50, 50, 50))
     pygame.draw.rect(screen, pygame.Color('brown'), (700 + eyes,50 + eyes_up, 10, 10))
@@ -172,7 +171,7 @@ while True:
 
     speech = myfont.render(speak, 1, (255,0,0))
     screen.blit(speech, (377, 535))
-    
+
     pygame.display.flip()
-    
-    
+
+
