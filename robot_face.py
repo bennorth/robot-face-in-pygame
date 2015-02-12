@@ -1,9 +1,5 @@
 
 import pygame
-key_a_down = False
-key_d_down = False
-key_s_down = False
-key_w_down = False
 key_UP_down = False
 key_DOWN_down = False
 key_RIGHT_down = False
@@ -30,14 +26,6 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:finshed = True
         elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_a:
-                key_a_down = True
-            if event.key == pygame.K_d:
-                key_d_down = True
-            if event.key == pygame.K_s:
-                key_s_down = True
-            if event.key == pygame.K_w:
-                key_w_down = True
             if event.key == pygame.K_UP:
                 key_UP_down = True
             if event.key == pygame.K_DOWN:
@@ -75,14 +63,6 @@ while True:
 
 
         elif event.type == pygame.KEYUP:
-            if event.key == pygame.K_a:
-                key_a_down = False
-            if event.key == pygame.K_d:
-                key_d_down = False
-            if event.key == pygame.K_s:
-                key_s_down = False
-            if event.key == pygame.K_w:
-                key_w_down = False
             if event.key == pygame.K_UP:
                 key_UP_down = False
             if event.key == pygame.K_DOWN:
