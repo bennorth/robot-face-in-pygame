@@ -11,6 +11,8 @@ eyes_up = 0
 eyes = 0
 finished = False
 
+player_speak = ''
+
 pygame.init()
 myfont = pygame.font.SysFont("monospace", 15)
 
@@ -40,6 +42,7 @@ while not finished:
                         tear_Y = 100
                 if event.key == pygame.K_y:
                     disabled = True
+                    player_speak = ''
             else:
                 if event.key == pygame.K_RETURN:
                     disabled = False
