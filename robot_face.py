@@ -27,7 +27,8 @@ speech_from_key = {pygame.K_t: 'WAA(cry)',
                    pygame.K_c: 'is',
                    pygame.K_v: 'John',
                    pygame.K_b: 'Paul',
-                   pygame.K_n: 'Sparki'}
+                   pygame.K_n: 'Sparki',
+                   pygame.K_j: '<press "y" to write your own speech>'}
 
 while not finished:
     clock.tick(30)
