@@ -112,7 +112,9 @@ while not finished:
 
     pygame.draw.rect(screen, pygame.Color('pink'), (mouth_space, 450,
                                                     mouth_wide, 100 + mouth_height))
-    if keys[pygame.K_SPACE]:
+
+    draw_snot = keys[pygame.K_SPACE]
+    if draw_snot:
         pygame.draw.circle(screen, pygame.Color('green'), (380, 400), 20)
 
     pygame.draw.rect(screen, pygame.Color(120, 120, 120), (350, 300, 100, 100))
