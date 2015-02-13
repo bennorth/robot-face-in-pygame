@@ -92,6 +92,8 @@ while not finished:
             if keys[key]:
                 speak = text
                 break
+    else:
+        speak = player_speak
 
     if tear_fall:
         tear_Y += 5
