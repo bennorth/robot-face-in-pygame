@@ -33,14 +33,16 @@ while not finished:
             finished = True
         #
         elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_t:
-                if not tear_fall:
-                    tear_fall = True
-                    tear_Y = 100
-            if event.key == pygame.K_y:
-                disabled = True
-            if event.key == pygame.K_RETURN:
-                disabled = False
+            if not disabled:
+                if event.key == pygame.K_t:
+                    if not tear_fall:
+                        tear_fall = True
+                        tear_Y = 100
+                if event.key == pygame.K_y:
+                    disabled = True
+            else:
+                if event.key == pygame.K_RETURN:
+                    disabled = False
 
     keys = pygame.key.get_pressed()
 
