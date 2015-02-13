@@ -47,6 +47,8 @@ while not finished:
             else:
                 if event.key == pygame.K_RETURN:
                     disabled = False
+                else:
+                    player_speak += event.unicode
 
     keys = pygame.key.get_pressed()
 
