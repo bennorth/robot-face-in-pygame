@@ -52,6 +52,8 @@ while not finished:
                 else:
                     player_speak += event.unicode
 
+    draw_snot = False
+
     keys = pygame.key.get_pressed()
 
     if not disabled:
@@ -87,6 +89,9 @@ while not finished:
             mouth_wide -=10
         if mouth_wide < 45: mouth_wide = 45
 
+        if keys[pygame.K_SPACE]:
+            draw_snot = True
+
         speak = ''
         for key, text in speech_from_key.items():
             if keys[key]:
@@ -113,7 +118,6 @@ while not finished:
     pygame.draw.rect(screen, pygame.Color('pink'), (mouth_space, 450,
                                                     mouth_wide, 100 + mouth_height))
 
-    draw_snot = keys[pygame.K_SPACE]
     if draw_snot:
         pygame.draw.circle(screen, pygame.Color('green'), (380, 400), 20)
 
