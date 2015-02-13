@@ -99,7 +99,8 @@ while not finished:
         speak = player_speak
 
     if len(tear_Ys) > 0:
-        tear_Ys[0] += 5
+        for i in range(len(tear_Ys)):
+            tear_Ys[i] += 5
         if tear_Ys[0] > 480:
             tear_Ys.pop(0)
 
@@ -121,8 +122,7 @@ while not finished:
 
     pygame.draw.rect(screen, pygame.Color(120, 120, 120), (350, 300, 100, 100))
 
-    if len(tear_Ys) > 0:
-        tear_Y = tear_Ys[0]
+    for tear_Y in tear_Ys:
         pygame.draw.circle(screen, pygame.Color(120, 120, 255), (100, tear_Y), 15)
         pygame.draw.circle(screen, pygame.Color(120, 120, 255), (700, tear_Y), 15)
 
