@@ -44,43 +44,44 @@ while not finished:
 
     keys = pygame.key.get_pressed()
 
-    if keys[pygame.K_a]:
-        eyes -=3
-    if eyes < 0: eyes = 0
+    if not disabled:
+        if keys[pygame.K_a]:
+            eyes -=3
+        if eyes < 0: eyes = 0
 
-    if keys[pygame.K_d]:
-        eyes +=3
-    if eyes > 40: eyes = 40
+        if keys[pygame.K_d]:
+            eyes +=3
+        if eyes > 40: eyes = 40
 
-    if keys[pygame.K_s]:
-        eyes_up +=3
-    if eyes_up >40: eyes_up = 40
+        if keys[pygame.K_s]:
+            eyes_up +=3
+        if eyes_up >40: eyes_up = 40
 
-    if keys[pygame.K_w]:
-        eyes_up -=3
-    if eyes_up < 0: eyes_up = 0
+        if keys[pygame.K_w]:
+            eyes_up -=3
+        if eyes_up < 0: eyes_up = 0
 
-    if keys[pygame.K_DOWN]:
-        mouth_height +=10
-    if mouth_height > 120: mouth_height = 120
+        if keys[pygame.K_DOWN]:
+            mouth_height +=10
+        if mouth_height > 120: mouth_height = 120
 
-    if keys[pygame.K_UP]:
-        mouth_height -=10
-    if mouth_height < 5: mouth_height = 5
+        if keys[pygame.K_UP]:
+            mouth_height -=10
+        if mouth_height < 5: mouth_height = 5
 
-    if keys[pygame.K_LEFT]:
-        mouth_wide +=10
-    if mouth_wide > 700: mouth_wide = 700
+        if keys[pygame.K_LEFT]:
+            mouth_wide +=10
+        if mouth_wide > 700: mouth_wide = 700
 
-    if keys[pygame.K_RIGHT]:
-        mouth_wide -=10
-    if mouth_wide < 45: mouth_wide = 45
+        if keys[pygame.K_RIGHT]:
+            mouth_wide -=10
+        if mouth_wide < 45: mouth_wide = 45
 
-    speak = ''
-    for key, text in speech_from_key.items():
-        if keys[key]:
-            speak = text
-            break
+        speak = ''
+        for key, text in speech_from_key.items():
+            if keys[key]:
+                speak = text
+                break
 
     if tear_fall:
         tear_Y += 5
