@@ -1,5 +1,3 @@
-# TODO: Allow multiple tears to roll down face at once.
-
 import pygame
 tear_Ys = []
 mouth_wide = 700
@@ -38,7 +36,7 @@ while not finished:
         elif event.type == pygame.KEYDOWN:
             if not disabled:
                 if event.key == pygame.K_t:
-                    if len(tear_Ys) == 0:
+                    if len(tear_Ys) == 0 or tear_Ys[-1] > 150:
                         tear_Ys.append(100)
                 if event.key == pygame.K_y:
                     disabled = True
