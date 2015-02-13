@@ -47,6 +47,7 @@ while not finished:
                     player_speak = ''
             else:
                 if event.key == pygame.K_RETURN:
+                    speech_from_key[pygame.K_j] = player_speak
                     disabled = False
                 else:
                     player_speak += event.unicode
