@@ -1,8 +1,7 @@
 # TODO: Allow multiple tears to roll down face at once.
 
 import pygame
-tear_fall = False
-tear_Y = 0
+tear_Ys = []
 mouth_wide = 700
 mouth_height = 75
 speak = ''
@@ -39,9 +38,8 @@ while not finished:
         elif event.type == pygame.KEYDOWN:
             if not disabled:
                 if event.key == pygame.K_t:
-                    if not tear_fall:
-                        tear_fall = True
-                        tear_Y = 100
+                    if len(tear_Ys) == 0:
+                        tear_Ys.append(100)
                 if event.key == pygame.K_y:
                     disabled = True
                     player_speak = ''
@@ -100,10 +98,10 @@ while not finished:
     else:
         speak = player_speak
 
-    if tear_fall:
-        tear_Y += 5
-        if tear_Y > 480:
-            tear_fall = False
+    if len(tear_Ys) > 0:
+        tear_Ys[0] += 5
+        if tear_Ys[0] > 480:
+            tear_Ys.pop(0)
 
     screen.fill(pygame.Color('grey'))
 
@@ -123,7 +121,8 @@ while not finished:
 
     pygame.draw.rect(screen, pygame.Color(120, 120, 120), (350, 300, 100, 100))
 
-    if tear_fall:
+    if len(tear_Ys) > 0:
+        tear_Y = tear_Ys[0]
         pygame.draw.circle(screen, pygame.Color(120, 120, 255), (100, tear_Y), 15)
         pygame.draw.circle(screen, pygame.Color(120, 120, 255), (700, tear_Y), 15)
 
