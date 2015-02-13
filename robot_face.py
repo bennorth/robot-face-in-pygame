@@ -128,7 +128,8 @@ while not finished:
         pygame.draw.circle(screen, pygame.Color(120, 120, 255), (700, tear_Y), 15)
 
     speech = myfont.render(speak, 1, (255, 0, 0))
-    speech_x = 377
+    speech_width, speech_height = speech.get_size()
+    speech_x = 400 - (speech_width / 2)
     screen.blit(speech, (speech_x, 535))
 
     pygame.display.flip()
