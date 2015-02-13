@@ -41,7 +41,6 @@ while not finished:
                 disabled = True
             if event.key == pygame.K_RETURN:
                 disabled = False
-                pass
 
     keys = pygame.key.get_pressed()
 
