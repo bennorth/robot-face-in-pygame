@@ -8,8 +8,8 @@ mouth_height = 75
 speak = ''
 disabled = False
 #0 = full left and 40 = full right
-eyes_up = 0
-eyes = 0
+eyes_up = 20
+eyes = 20
 finished = False
 
 player_speak = ''
