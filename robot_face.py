@@ -130,5 +130,3 @@ while not finished:
     screen.blit(speech, (speech_x, 535))
 
     pygame.display.flip()
-
-
