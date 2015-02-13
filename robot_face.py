@@ -1,3 +1,4 @@
+# TODO: Allow multiple tears to roll down face at once.
 
 import pygame
 tear_fall = False
