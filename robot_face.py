@@ -77,24 +77,11 @@ while not finished:
         mouth_wide -=10
     if mouth_wide < 45: mouth_wide = 45
 
-    if keys[pygame.K_t]:
-        speak = 'WAA(cry)'
-    elif keys[pygame.K_h]:
-        speak = 'hello'
-    elif keys[pygame.K_z]:
-        speak = 'My'
-    elif keys[pygame.K_x]:
-        speak = 'name'
-    elif keys[pygame.K_c]:
-        speak = 'is'
-    elif keys[pygame.K_v]:
-        speak = 'John'
-    elif keys[pygame.K_b]:
-        speak = 'Paul'
-    elif keys[pygame.K_n]:
-        speak = 'Sparki'
-    else:
-        speak = ''
+    speak = ''
+    for key, text in speech_from_key.items():
+        if keys[key]:
+            speak = text
+            break
 
     if tear_fall:
         tear_Y += 5
