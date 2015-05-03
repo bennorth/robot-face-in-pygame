@@ -60,10 +60,12 @@ while not finished:
         if keys[pygame.K_r]:
             # open eyelids
             eyelids -= 5
+        if eyelids < 5: eyelids = 5
 
         if keys[pygame.K_f]:
             # close eyelids
             eyelids += 5
+        if eyelids > 60: eyelids = 60
 
         if keys[pygame.K_a]:
             eyes -=3
