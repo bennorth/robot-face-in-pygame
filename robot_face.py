@@ -59,11 +59,11 @@ while not finished:
     if not disabled:
         if keys[pygame.K_r]:
             # open eyelids
-            pass
+            eyelids -= 5
 
         if keys[pygame.K_f]:
             # close eyelids
-            pass
+            eyelids += 5
 
         if keys[pygame.K_a]:
             eyes -=3
