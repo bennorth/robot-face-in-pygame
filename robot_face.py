@@ -7,6 +7,10 @@ disabled = False
 #0 = full left and 40 = full right
 eyes_up = 20
 eyes = 20
+
+# How closed are the eyelids?
+eyelids = 5
+
 finished = False
 
 player_speak = ''
