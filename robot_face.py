@@ -11,6 +11,10 @@ eyes = 20
 # How closed are the eyelids?
 eyelids = 5
 
+# Automated eyelid animation.  If this list isn't empty, it's the values
+# which we want the 'eyelids' variable to have in each frame.
+eyelid_auto_values = []
+
 finished = False
 
 player_speak = ''
