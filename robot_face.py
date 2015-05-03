@@ -53,6 +53,14 @@ while not finished:
     keys = pygame.key.get_pressed()
 
     if not disabled:
+        if keys[pygame.K_r]:
+            # open eyelids
+            pass
+
+        if keys[pygame.K_f]:
+            # close eyelids
+            pass
+
         if keys[pygame.K_a]:
             eyes -=3
         if eyes < 0: eyes = 0
