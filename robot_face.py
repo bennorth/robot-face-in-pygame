@@ -121,6 +121,12 @@ while not finished:
     pygame.draw.rect(screen, pygame.Color('brown'), (700 + eyes, 50 + eyes_up, 10, 10))
     pygame.draw.rect(screen, pygame.Color('brown'), (50 + eyes, 50 + eyes_up, 10, 10))
 
+    # Eyelids.  They're a bit wider than the eyeballs and start just
+    # above them.  They close downwards, so their height is what
+    # changes.
+    pygame.draw.rect(screen, pygame.Color(80, 80, 80), (45, 45, 60, eyelids))
+    pygame.draw.rect(screen, pygame.Color(80, 80, 80), (695, 45, 60, eyelids))
+
     total_space = 800 - mouth_wide
     mouth_space = total_space / 2
 
