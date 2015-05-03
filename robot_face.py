@@ -71,6 +71,10 @@ while not finished:
             eyelids += 5
         if eyelids > 60: eyelids = 60
 
+        if keys[pygame.K_e]:
+            if not eyelid_auto_values:
+                eyelid_auto_values = [5, 10, 20, 30, 40, 50, 60, 50, 40, 30, 20, 10, 5]
+
         if keys[pygame.K_a]:
             eyes -=3
         if eyes < 0: eyes = 0
