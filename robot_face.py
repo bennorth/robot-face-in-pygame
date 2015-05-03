@@ -53,6 +53,13 @@ while not finished:
                 if event.key == pygame.K_RETURN:
                     speech_from_key[pygame.K_j] = player_speak
                     disabled = False
+                elif event.key == pygame.K_BACKSPACE:
+                    # Only makes sense to backspace if there's at least one
+                    # character in the speech so far:
+                    if len(player_speak) > 0:
+                        # If so, take everything except the last character and
+                        # make that the new 'player_speak':
+                        player_speak = player_speak[:-1]
                 else:
                     player_speak += event.unicode
 
