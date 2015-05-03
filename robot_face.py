@@ -122,6 +122,12 @@ while not finished:
 
     screen.fill(pygame.Color('grey'))
 
+    if len(eyelid_auto_values) > 0:
+        # If the list of automated values isn't empty, we need to take
+        # the next value off the list and use it to set the eyelids'
+        # position.
+        eyelids = eyelid_auto_values.pop(0)
+
     pygame.draw.rect(screen, pygame.Color('white'), (50, 50, 50, 50))
     pygame.draw.rect(screen, pygame.Color('white'), (700, 50, 50, 50))
     pygame.draw.rect(screen, pygame.Color('brown'), (700 + eyes, 50 + eyes_up, 10, 10))
