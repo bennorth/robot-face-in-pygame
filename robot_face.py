@@ -1,4 +1,6 @@
 import pygame
+import random
+
 tear_Ys = []
 mouth_wide = 700
 mouth_height = 75
@@ -86,7 +88,7 @@ while not finished:
             eyelids += 5
         if eyelids > 60: eyelids = 60
 
-        if keys[pygame.K_e]:
+        if keys[pygame.K_e] or (auto_blink and random.randint(1, 120) == 1):
             if not eyelid_auto_values:
                 eyelid_auto_values = [5, 10, 20, 30, 40, 50, 60, 50, 40, 30, 20, 10, 5]
                 while eyelid_auto_values[0] < eyelids:
