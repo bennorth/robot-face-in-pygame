@@ -15,6 +15,9 @@ eyelids = 5
 # which we want the 'eyelids' variable to have in each frame.
 eyelid_auto_values = []
 
+# Automated random blinking?
+auto_blink = False
+
 finished = False
 
 player_speak = ''
