@@ -67,6 +67,8 @@ while not finished:
                         # If so, take everything except the last character and
                         # make that the new 'player_speak':
                         player_speak = player_speak[:-1]
+                elif event.key == pygame.K_ESCAPE:
+                    player_speak = ''
                 else:
                     player_speak += event.unicode
 
