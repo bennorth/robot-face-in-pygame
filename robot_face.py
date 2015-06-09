@@ -49,6 +49,11 @@ while not finished:
                 if event.key == pygame.K_t:
                     if len(tear_Ys) == 0 or tear_Ys[-1] > 150:
                         tear_Ys.append(100)
+                if event.key == pygame.K_q:
+                    if auto_blink == False:
+                        auto_blink = True
+                    else:
+                        auto_blink = False
                 if event.key == pygame.K_y:
                     disabled = True
                     player_speak = ''
